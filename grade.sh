@@ -44,12 +44,12 @@
 # parameter $2 for number to limit things to.
 # Global variables $infile, $inputdir,
 # and $TESTS_PASSED are read and modified.
-function runCmdNDiff() {
+runCmdNDiff() {
 	base_in=$(basename $infile .csv)
 	
 	# runs current test and captures output
 	# and also finds the expected output
-	if [ "$1" == "LIMIT" ]
+	if [ "$1" = "LIMIT" ]
 	then
 		java $main $infile LIMIT $2 > out
 		expected_file="../$inputdir/cmdLIMIT_$2-$base_in.out"
